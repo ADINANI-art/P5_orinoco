@@ -1,4 +1,3 @@
-let cartIconNumber = document.querySelector(".nav__cart__number p");
 let cart = document.querySelector(".cart-card__recap");
 let copyOfLS = JSON.parse(localStorage.getItem("products"));
 
