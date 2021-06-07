@@ -1,5 +1,6 @@
 let params = new URL(document.location).searchParams;
 let id = params.get("id");
+
 const productCardImg = document.querySelector(".img");
 const productCardName = document.querySelector(".product-card__infos__title");
 const productCardDescription = document.querySelector(
@@ -9,9 +10,6 @@ const productCardPrice = document.querySelector(".product-card__infos__price");
 const bearNumber = document.querySelector("#bearNum");
 const colorSelect = document.querySelector("#color-select");
 
-const addToCartBtn = document.querySelector(".add-to-cart");
-const confirmation = document.querySelector(".added-to-cart-confirmation");
-const textConfirmation = document.querySelector(".confirmation-text");
 
 main();
 
@@ -22,9 +20,7 @@ function main() {
 }
 
 function checkIf404() {
-  window.addEventListener(
-    "error",
-    (e) => {
+  window.addEventListener("error", (e) => {
       let container = document.querySelector(".container");
       container.innerHTML = `<p>Cette page n'existe pas. <a class="back-to-home" href="index.html">Retourner dans la boutique ?</a></p>`;
       container.style.padding = "40vh 0";
@@ -73,6 +69,10 @@ function getArticles() {
 }
 
 function addToCart() {
+  const addToCartBtn = document.querySelector(".add-to-cart");
+  const confirmation = document.querySelector(".added-to-cart-confirmation");
+  const textConfirmation = document.querySelector(".confirmation-text");
+  
   addToCartBtn.addEventListener("click", () => {
     if (bearNumber.value > 0 && bearNumber.value < 100) {
       // ------ Création du produit qui sera ajouté au panier
