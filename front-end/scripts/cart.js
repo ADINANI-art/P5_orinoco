@@ -130,7 +130,6 @@ function checkFormAndPostRequest() {
       // Si le formulaire est valide, le tableau productsBought contiendra un tableau d'objet qui sont les produits acheté, et order contiendra ce tableau ainsi que l'objet qui contient les infos de l'acheteur
       let productsBought = [];
       productsBought.push(copyOfLS);
-      console.log(productsBought);
 
       const order = {
         contact: {
@@ -142,7 +141,6 @@ function checkFormAndPostRequest() {
         },
         products: productsBought,
       };
-      console.log(order);
 
       // -------  Envoi de la requête POST au back-end --------
       // Création de l'entête de la requête
@@ -168,8 +166,7 @@ function checkFormAndPostRequest() {
           document.location.href = "confirmation.html";
         })
         .catch((err) => {
-          console.log(err);
-          alert("Il y a eu une erreur");
+          alert("Il y a eu une erreur : " + err);
         });
     }
   });

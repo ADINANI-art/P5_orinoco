@@ -85,18 +85,17 @@ function addToCart() {
 
       // ----------------- Gestion du localStorage
       let arrayProductsInCart = [];
-      arrayProductsInCart.push(productAdded);
-
+      
       // Si le localStorage existe, on récupère son contenu, on l'insère dans le tableau arrayProductsInCart, puis on le renvoit vers le localStorage avec le nouveau produit ajouté.
       if (localStorage.getItem("products") !== null) {
         arrayProductsInCart = JSON.parse(localStorage.getItem("products"));
+        
+        
+        // Si le LS est vide, on le crée avec le produit ajouté
+      } 
         arrayProductsInCart.push(productAdded);
         localStorage.setItem("products", JSON.stringify(arrayProductsInCart));
-
-        // Si le LS est vide, on le crée avec le produit ajouté
-      } else {
-        localStorage.setItem("products", JSON.stringify(arrayProductsInCart));
-      }
+      
 
       // Effets visuels lors d'un ajout au panier
       confirmation.style.visibility = "visible";
