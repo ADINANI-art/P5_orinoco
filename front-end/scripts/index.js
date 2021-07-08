@@ -21,6 +21,7 @@ function getArticles() {
     // Dispatcher les données de chaque produit (prix, nom...) dans le DOM
     .then(function (resultatAPI) {
       const articles = resultatAPI;
+      console.log(articles);
       for (let article in articles) {
         let productCard = document.createElement("div");
         document.querySelector(".products").appendChild(productCard);
