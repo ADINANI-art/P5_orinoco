@@ -1,10 +1,11 @@
 {
   "name": "orinoco-backend",
   "version": "1.0.0",
-  "description": "",
+  "description": "This is the back end server for Project 5 of the Junior Web Developer path.",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "author": "",
   "license": "ISC",
@@ -16,5 +17,6 @@
     "mongoose": "^5.3.8",
     "mongoose-unique-validator": "^2.0.2",
     "uuid": "^3.3.2"
-  }
+  },
+  "devDependencies": {}
 }
