@@ -13,12 +13,12 @@ function getArticles() {
     .catch((error) => {
       let productsContainer = document.querySelector(".products-container");
       productsContainer.innerHTML =
-        "Nous n'avons pas réussi à afficher nos nounours. Avez vous bien lancé le serveur local (Port 3000) ? <br>Si le problème persiste, contactez-nous.";
+        "Nous n'avons pas réussi à afficher nos produits. Assurez-vous d'avoir bien lancé le serveur local au Port 3000 et avoir une connexion internet";
       productsContainer.style.textAlign = "center";
       productsContainer.style.padding = "30vh 0";
     })
 
-    // Dispatcher les données de chaque produit (prix, nom...) dans le DOM
+    // Distribution des données de chaque produit (prix, nom...) dans le DOM
     .then(function (resultatAPI) {
       const articles = resultatAPI;
       console.log(articles);
