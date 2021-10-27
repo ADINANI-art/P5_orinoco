@@ -1,4 +1,5 @@
 let cart = document.querySelector(".cart-card__recap");
+// On utilise json.parse stocker les et envoyer les données dans le localStorage.
 let copyOfLS = JSON.parse(localStorage.getItem("products"));
 
 main();
@@ -47,7 +48,7 @@ function displayCart() {
       "price"
     );
 
-    // Affichage du prix avec le formatage €
+    // Affichage du prix en (euro) €
     productPrice.innerHTML = new Intl.NumberFormat("fr-FR", {
       style: "currency",
       currency: "EUR",
@@ -59,7 +60,7 @@ function countTotalInCart() {
   let arrayOfPrice = [];
   let totalPrice = document.querySelector(".total");
 
-  // On push chaque prix du DOM dans un tableau
+  // On push(on envoie) chaque prix du DOM dans un tableau
   let productPriceAccordingToQuantity = document.querySelectorAll(".price");
   for (let price in productPriceAccordingToQuantity) {
     arrayOfPrice.push(productPriceAccordingToQuantity[price].innerHTML);
@@ -89,7 +90,7 @@ function countTotalInCart() {
 
 function toEmptyCart() {
 
-  // Lorsque qu'on clique sur le bouton, le panier se vide ainsi que le localStorage
+  // Au clique sur le bouton, le panier se vide en même temps que le localStorage
   const buttonToEmptyCart = document.querySelector(".to-empty-cart");
   buttonToEmptyCart.addEventListener("click", () => {
     localStorage.clear();
@@ -109,7 +110,7 @@ function checkFormAndPostRequest() {
   let inputPhone = document.querySelector("#phone");
   let erreur = document.querySelector(".erreur");
 
-  // Lors d'un clic, si l'un des champs n'est pas rempli, on affiche une erreur, on empêche l'envoi du formulaire. On vérifie aussi que le numéro est un nombre, sinon même chose.
+  // au clic sur le boutton "confirmation" , si l'un des champs n'est pas rempli, on affiche une erreur, on empêche l'envoi du formulaire. On vérifie aussi que le numéro est un nombre, sinon même chose.
   submit.addEventListener("click", (e) => {
     if (
       !inputName.value ||
