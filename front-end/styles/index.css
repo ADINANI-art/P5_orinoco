@@ -24,7 +24,7 @@ h1 {
   display: flex;
   align-items: center;
   width: 100%;
-  background: #e1bb80;
+  background: #7b6b43;
 }
 
 .header-container {
@@ -107,7 +107,7 @@ h1 {
 }
 
 main .products-container {
-  background-color: #e1bb80;
+  background-color: #aaa;
   display: flex;
   justify-content: center;
   align-self: center;
